@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy New Year 2025!</title>
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #1a1a1a, #4a4a4a);
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+        .container {
+            text-align: center;
+            color: white;
+            padding: 2rem;
+            position: relative;
+            max-width: 800px;
+        }
+        h1 {
+            font-size: 4rem;
+            margin: 0;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        .message {
+            font-size: 1.5rem;
+            margin: 2rem 0;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+        .firework {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            animation: explode 1s ease-out infinite;
+        }
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #ff4d4d, 0 0 20px #ff4d4d;
+            }
+            to {
+                text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ff4d4d, 0 0 40px #ff4d4d;
+            }
+        }
+        @keyframes explode {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(30);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Happy New Year 2025!</h1>
+        <div class="message">
+            <p>Dear friends,</p>
+            <p>As we welcome this new year together, I want you to know how grateful I am to have you in my life. Each of you brings something special to my world.</p>
+            <p>May this year bring you moments of joy that make you smile, strength for any challenges you face, and countless reasons to celebrate life.</p>
+            <p>Thank you for being part of my journey. Here's to creating more beautiful memories together! 💫</p>
+            <p>With love and warmth,</p>
+            <p>Your friend MOHAMED OUTALEB ❤️</p>
+        </div>
+    </div>
+
+    <script>
+        function createFirework() {
+            const firework = document.createElement('div');
+            firework.className = 'firework';
+            firework.style.left = Math.random() * window.innerWidth + 'px';
+            firework.style.top = Math.random() * window.innerHeight + 'px';
+            firework.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+            document.body.appendChild(firework);
+            
+            setTimeout(() => {
+                firework.remove();
+            }, 1000);
+        }
+
+        setInterval(createFirework, 300);
+    </script>
+</body>
+</html>
